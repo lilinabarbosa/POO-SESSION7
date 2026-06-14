@@ -1,0 +1,102 @@
+PRATICA 4:
+
+QUESTAO 2
+Árvore
+├── MadeiraDeLei
+│   ├── Bétula
+│   └── Freixo
+└── MadeiraConífera
+    ├── Cedro
+    └── Pinho
+        └── PinhoVermelho
+QUESTÃO 4
+public String aString; → Verdadeiro (acessível por subclasse)
+protected boolean aBoolean; → Verdadeiro (acessível por subclasse)
+int anInt; → Falso (se subclasse estiver em pacote diferente; só acessa se mesmo pacote)
+private double aDouble; → Falso (não acessível)
+public String aMethod() → Verdadeiro (acessível)
+private class aNestedClass → Falso (não acessível)
+public aClassConstructor() → Verdadeiro (subclasse pode chamar com super())
+
+QUESTAO 5
+Instrumento
+- emPromocao: boolean
+- preco: double
+- quantidadeEstoque: int
++ getPreco(): double
++ aplicarDescontoFuncionario(): double
++ setEmPromocao(boolean): void
++ getEmPromocao(): boolean
++ setPreco(double): void
++ getQuantidadeEstoque(): int
++ setQuantidadeEstoque(int): void
+         |
+         |
+InstrumentoCordas
+- numCordas: int
++ getNumCordas(): int
++ setNumCordas(int): void
+         |
+         |
+Guitarra
+- eletrica: boolean
++ isEletrica(): boolean
++ setEletrica(boolean): void
+
+QUESTÃO 6
+
+Vehicle
+int numWheels
+int getWheels()
+        |
+        |
+Car
+int numDoors
+boolean isElectric
+boolean getIsElectric()
+        |
+        |
+Bicycle
+String bikeType
+String getBikeType()
+        |
+        |
+Convertible
+String roofType
+String getRoofType()
+
+QUESTAO 7
+Forma
+├── Retângulo
+│   └── Quadrado
+├── Círculo
+└── Triângulo
+
+QUESTÃO 8
+Objeto
+└── Animal
+    ├── Mamífero
+    │   └── Cachorro
+    └── Crustáceo
+        └── Caranguejo
+            └── Caranguejo Ermitão
+
+
+PRATICA 5:
+
+QUESTAO 1
+Inside Class B's Method!
+Inside Class C's Method!
+Inside Class A's Method!
+
+QUESTAO 2
+Classe abstrata pode ter métodos concretos e construtores, é para herança única ("é-um"); interface só define contrato, permite múltipla implementação ("tem-um"). Use abstrata quando há código base comum; use interface 
+para comportamentos compartilhados entre classes não relacionadas.
+
+QUESTAO 3
+a = new B(); → Sempre compilar (B implementa A)
+d = new C(); → Não compilar (C é abstrata; não pode instanciar)
+b.methodA(); → Sempre compilar (B implementa methodA)
+e.methodA(); → Sempre compilar (E herda methodA de B)
+c = new C(); → Não compilar (C é abstrata)
+(D)c.methodC(); → Não compilar (devido à precedência: tenta converter void para D; o correto seria ((D)c).methodC())
